@@ -11,6 +11,5 @@ class Vector:
         b = self.y + other.y
         return Vector(a, b)
 
-
-def multiply(a: Vector, b: Vector) -> float:
-    return a.x * b.x + a.y * b.y
+    def __mul__(self, other: Vector) -> float:
+        return self.x * other.x + self.y * other.y
