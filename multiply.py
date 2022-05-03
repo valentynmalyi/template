@@ -7,9 +7,9 @@ class Vector:
         self.y = y
 
     def __add__(self, other: Vector) -> Vector:
-        a = self.x + other.x
-        b = self.y + other.y
-        return Vector(a, b)
+        x = self.x + other.x
+        y = self.y + other.y
+        return Vector(x, y)
 
     def __mul__(self, other: Vector) -> float:
         return self.x * other.x + self.y * other.y
