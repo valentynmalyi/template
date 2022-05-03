@@ -30,7 +30,7 @@ jobs:
           message: |
             ${{ github.actor }} created commit:
             Repository: https://github.com/${{ github.repository }}
-            See action: https://github.com/${{ github.repository }}/actions/${{github.run_id}}
+            See action: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
 #      - name: send telegram message on push
 #        uses: appleboy/telegram-action@master
 #        with:
