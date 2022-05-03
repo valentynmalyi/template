@@ -29,6 +29,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
+            FAIL
             ${{ github.actor }} created commit:
             Repository: https://github.com/${{ github.repository }}
             See action: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
@@ -39,6 +40,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_IAN }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
+            FAIL
             ${{ github.actor }} created commit:
             Repository: https://github.com/${{ github.repository }}
             See action: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
