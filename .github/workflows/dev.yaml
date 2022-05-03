@@ -31,12 +31,12 @@ jobs:
             ${{ github.actor }} created commit:
             Repository: https://github.com/${{ github.repository }}
             See action: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
-#      - name: send telegram message on push
-#        uses: appleboy/telegram-action@master
-#        with:
-#          to: ${{ secrets.TELEGRAM_IAN }}
-#          token: ${{ secrets.TELEGRAM_TOKEN }}
-#          message: |
-#            ${{ github.actor }} created commit:
-#            Repository: ${{ github.repository }}
-#            See action: https://github.com/${{ github.repository }}/actions/${{github.action_path}}
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_IAN }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+            Repository: https://github.com/${{ github.repository }}
+            See action: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
