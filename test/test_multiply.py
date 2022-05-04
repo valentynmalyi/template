@@ -21,5 +21,5 @@ class TestLineSegment:
     def test_create_vector(self):
         a = Point(1, 1)
         b = Point(2, 1)
-        res = LineSegment(a, b).create_vector()
-        assert res.x == 1, res.y == 0
+        vector = LineSegment(a, b).create_vector()
+        assert vector.x == 1, vector.y == 0
