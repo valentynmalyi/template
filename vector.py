@@ -15,6 +15,7 @@ class Vector:
         return self.x * other.x + self.y * other.y
 
     def __eq__(self, other: object) -> bool:
+        # you don't test when returns False
         if not isinstance(other, Vector):
             return False
         return self.x == other.x and self.y == other.y
