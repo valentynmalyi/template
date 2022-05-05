@@ -1,6 +1,7 @@
 from vector import Vector
 from math import isclose
 
+
 class TestVector:
     def test__add__(self):
         assert Vector(1, 1) + Vector(1, 2) == Vector(2, 3)
