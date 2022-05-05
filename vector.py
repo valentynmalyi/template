@@ -14,6 +14,7 @@ class Vector:
     def __mul__(self, other: Vector) -> float:
         return self.x * other.x + self.y * other.y
 
-    def __eq__(self, other: Vector) -> bool:
-        if self.x == other.x and self.y == other.y:
-            return True
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Vector):
+            return False
+        return self.x == other.x and self.y == other.y
