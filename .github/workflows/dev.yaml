@@ -39,7 +39,7 @@ jobs:
             See action: https://github.com/${{ github.repository }}/actions/runs/${{github.run_id}}
       - name: Send telegram message Ian
         uses: appleboy/telegram-action@master
-        if: ${{ failure() && github.actor == 'kutuzoff1812' }}
+        if: ${{ failure() && github.actor == 'lightspeed69' }}
         with:
           to: ${{ secrets.TELEGRAM_IAN }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
