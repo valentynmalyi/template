@@ -18,8 +18,8 @@ class TestVector:
 
 
 class TestLineSegment:
-    def test_create_vector(self):
+    def test_vector_property(self):
         a = Point(1, 1)
         b = Point(2, 1)
         vector = LineSegment(a, b).vector
-        assert vector.x == 1, vector.y == 0
+        assert vector == Vector(1, 0)
