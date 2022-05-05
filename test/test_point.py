@@ -8,3 +8,4 @@ class TestLineSegment:
         b = Point(2, 1)
         vector = LineSegment(a, b).vector
         assert vector == Vector(1, 0)
+

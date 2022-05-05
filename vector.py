@@ -19,4 +19,10 @@ class Vector:
             return False
         return self.x == other.x and self.y == other.y
 
-    # Here I want to property length and square length of this vector
+    @property
+    def square_length(self) -> int:
+        return self.x ** 2 + self.y ** 2
+
+    @property
+    def length(self) -> float:
+        return self.square_length ** 0.5
