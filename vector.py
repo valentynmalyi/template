@@ -18,3 +18,5 @@ class Vector:
         if not isinstance(other, Vector):
             return False
         return self.x == other.x and self.y == other.y
+
+    # Here I want to property length and square length of this vector
