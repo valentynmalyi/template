@@ -12,5 +12,6 @@ class LineSegment:
         self.a = a
         self.b = b
 
-    def create_vector(self):  # getting vector from segment
+    @property
+    def vector(self) -> Vector:
         return Vector(self.b.x - self.a.x, self.b.y - self.b.y)
