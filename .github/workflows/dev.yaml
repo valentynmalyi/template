@@ -21,7 +21,7 @@ jobs:
       - name: Install requirements
         run: pipenv install --ignore-pipfile --system
       - name: Run mypy
-        run: pip freeze
+        run: mypy
       - name: Run pytest
         run: pytest .
       - name: Send telegram message
