@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pytest = "*"
+mypy = "==0.950"
 
 [dev-packages]
 
