@@ -19,4 +19,10 @@ class LineSegment:
     def vector(self) -> Vector:
         return Vector(self.b.x - self.a.x, self.b.y - self.a.y)
 
-    # implement methods square_length and length
+    @property
+    def square_length(self) -> int:
+        return self.vector.square_length
+
+    @property
+    def length(self) -> float:
+        return self.vector.length
