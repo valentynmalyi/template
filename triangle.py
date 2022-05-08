@@ -1,4 +1,6 @@
-from point import Point
+from math import isclose
+
+from point import LineSegment, Point
 
 
 class Triangle:
@@ -9,3 +11,14 @@ class Triangle:
 
     def __repr__(self) -> str:
         return f"A{self.a}, B{self.b}, C{self.c}"
+
+
+class RightTriangle(Triangle):
+    def __init__(self, a: Point, b: Point, c: Point):
+        super().__init__(a=a, b=b, c=c)
+        self._init_triangle(a, b, c)
+
+    def _init_triangle(self, a: Point, b: Point, c: Point) -> None:
+        lines = sorted([LineSegment(a, b).length, LineSegment(b, c).length, LineSegment(a, c).length])
+        if not isclose(lines[2] ** 2, lines[1] ** 2 + lines[0] ** 2):
+            raise Exception(f"triangle {self} isn't a right triangle")
