@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - dev
-      - feature/*
+      - feature_*
 jobs:
   build:
     runs-on: ubuntu-latest
