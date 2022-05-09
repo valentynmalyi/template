@@ -20,6 +20,6 @@ class LineSegment:
     def length(self) -> float:
         return self.vector.length
 
-    def _validate_equal_points(self):
+    def _validate_equal_points(self) -> None:
         if self.a == self.b:
             raise exceptions.EqualPoints(self.a)
