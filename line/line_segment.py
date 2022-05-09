@@ -1,4 +1,5 @@
-from vector import Vector
+from point import Point
+from line import Vector
 
 
 class LineSegment:

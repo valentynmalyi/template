@@ -1,6 +1,6 @@
 from math import isclose
 
-from line import Vector
+from line.vector import Vector
 
 
 class TestVector:
