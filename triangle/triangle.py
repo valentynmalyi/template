@@ -1,6 +1,7 @@
 from math import isclose
 
-from point import LineSegment, Point
+from point import Point
+from line import LineSegment
 
 
 class Triangle:

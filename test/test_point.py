@@ -2,9 +2,9 @@ from math import isclose
 
 import pytest
 
-from point import LineSegment, Point
+from line import LineSegment, Vector
+from point import Point
 from triangle import RightTriangle, Triangle
-from vector import Vector
 
 
 class TestLineSegment:
