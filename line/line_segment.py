@@ -1,11 +1,12 @@
 from point import Point
-from line import Vector
+from line import Vector, exceptions
 
 
 class LineSegment:
     def __init__(self, a: Point, b: Point):
         self.a = a
         self.b = b
+        self._validate_equal_points()
 
     @property
     def vector(self) -> Vector:
@@ -18,3 +19,7 @@ class LineSegment:
     @property
     def length(self) -> float:
         return self.vector.length
+
+    def _validate_equal_points(self):
+        if self.a == self.b:
+            raise exceptions.EqualPoints(self.a)
