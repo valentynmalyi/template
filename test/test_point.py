@@ -2,7 +2,7 @@ from math import isclose
 
 import pytest
 
-from point import LineSegment, Point  # noqa: I100, I202
+from point import LineSegment, Point
 from triangle import RightTriangle, Triangle
 from vector import Vector
 
