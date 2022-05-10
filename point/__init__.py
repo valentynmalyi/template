@@ -1,2 +1,2 @@
-import point.point_exceptions
-from point.point import Point
+from . import exceptions
+from .point import Point

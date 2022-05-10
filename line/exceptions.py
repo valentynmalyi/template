@@ -1,4 +1,4 @@
-from point import point_exceptions, Point
+from point import exceptions as point_exceptions, Point
 
 
 class LineException(Exception):

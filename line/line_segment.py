@@ -1,6 +1,6 @@
-from point import Point, point_exceptions
-from line import line_exceptions
-from line.vector import Vector
+from point import Point
+from . import exceptions
+from .vector import Vector
 
 
 class LineSegment:
@@ -23,4 +23,4 @@ class LineSegment:
 
     def _validate_equal_points(self) -> None:
         if self.a == self.b:
-            raise point_exceptions.EqualPoints(self.a)
+            raise exceptions.EqualPoints(self.a)

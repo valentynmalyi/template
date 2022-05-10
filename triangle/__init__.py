@@ -1,2 +1,2 @@
-import triangle.triangle_exceptions
-from triangle.triangle import Triangle, RightTriangle
+import triangle.exceptions
+from triangle.triangle import RightTriangle, Triangle

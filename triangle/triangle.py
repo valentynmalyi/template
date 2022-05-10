@@ -1,9 +1,9 @@
-from math import isclose
 from itertools import permutations
+from math import isclose
 
-from point import Point, point_exceptions
-from line import LineSegment, line_exceptions as line_exception
-from triangle import triangle_exceptions
+from line import exceptions as line_exception, LineSegment
+from point import Point
+from . import exceptions
 
 
 class Triangle:
@@ -20,16 +20,20 @@ class Triangle:
         self._validate_is_point()
         self._validate_is_line()
 
-    def _validate_is_line(self):
+    def _validate_is_line(self) -> None:
         for a, b, c in permutations([self.a, self.b, self.c], 3):
-            try:
-                LineSegment(a, b)
-            except line_exception.EqualPoints:
-                raise triangle_exceptions.IsLine(LineSegment(a, c))
+            self._validate_line_segment(a, b, c)
 
-    def _validate_is_point(self):
+    @staticmethod
+    def _validate_line_segment(a: Point, b: Point, c: Point) -> None:
+        try:
+            LineSegment(a, b)
+        except line_exception.EqualPoints:
+            raise exceptions.IsLine(LineSegment(a, c))
+
+    def _validate_is_point(self) -> None:
         if self.a == self.b == self.c:
-            raise point_exceptions.IsPoint(self.a)
+            raise exceptions.IsPoint(self.a)
 
 
 class RightTriangle(Triangle):
@@ -41,5 +45,3 @@ class RightTriangle(Triangle):
         side = sorted([LineSegment(a, b).length, LineSegment(b, c).length, LineSegment(a, c).length])
         if not isclose(side[2] ** 2, side[1] ** 2 + side[0] ** 2):
             raise Exception(f"triangle {self} isn't a right triangle")
-
-

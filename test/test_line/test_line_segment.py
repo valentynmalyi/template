@@ -1,8 +1,8 @@
 from math import isclose
 
-from point import Point
 from line import Vector
 from line.line_segment import LineSegment
+from point import Point
 
 
 class TestLineSegment:

@@ -1,5 +1,4 @@
-from point import Point
-from line import LineSegment, line_exceptions
+from line import exceptions as line_exceptions, LineSegment
 
 
 class TriangleException(Exception):
@@ -18,4 +17,3 @@ class IsLine(TriangleException):
 class IsPoint(line_exceptions.EqualPoints, IsLine):
     def __str__(self) -> str:
         return f"This triangle equal to point: {self.point}"
-

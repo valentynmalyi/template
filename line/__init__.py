@@ -1,3 +1,3 @@
-import line.line_exceptions
-from line.vector import Vector
-from line.line_segment import LineSegment
+from . import exceptions
+from .vector import Vector
+from .line_segment import LineSegment
