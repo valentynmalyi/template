@@ -1,9 +1,9 @@
 from math import isclose
+from itertools import permutations
 
-from point import Point
-from line import LineSegment, exceptions as line_exception
-# from triangle.exceptions import NoTriangle
-from triangle import exceptions
+from point import Point, point_exceptions
+from line import LineSegment, line_exceptions as line_exception
+from triangle import triangle_exceptions
 
 
 class Triangle:
@@ -11,16 +11,25 @@ class Triangle:
         self.a = a
         self.b = b
         self.c = c
-        self._validate_equal_points()
+        self._validate()
 
     def __repr__(self) -> str:
         return f"A{self.a}, B{self.b}, C{self.c}"
 
-    def _validate_equal_points(self) -> None:
-        try:
-            [LineSegment(self.a, self.b), LineSegment(self.b, self.c), LineSegment(self.a, self.c)]
-        except line_exception.EqualPoints:
-            raise exceptions.NoTriangle
+    def _validate(self) -> None:
+        self._validate_is_point()
+        self._validate_is_line()
+
+    def _validate_is_line(self):
+        for a, b, c in permutations([self.a, self.b, self.c], 3):
+            try:
+                LineSegment(a, b)
+            except line_exception.EqualPoints:
+                raise triangle_exceptions.IsLine(LineSegment(a, c))
+
+    def _validate_is_point(self):
+        if self.a == self.b == self.c:
+            raise point_exceptions.IsPoint(self.a)
 
 
 class RightTriangle(Triangle):
