@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0dd147090da76f74307e7bfc3dfb5e07ae4db98f67bfc8cb171ad4c289943062"
+            "sha256": "bf6493af80af5474218170fcb11bedefb526c29be34974809b2b31ea02eed0e2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -31,13 +31,6 @@
             ],
             "index": "pypi",
             "version": "==4.0.1"
-        },
-        "flake8-absolute-import": {
-            "hashes": [
-                "sha256:d24f189bca52ffc0d13e8046606ea42d22a9ad9d409bf39e52b93493cf2ffd2c"
-            ],
-            "index": "pypi",
-            "version": "==1.0.0.1"
         },
         "flake8-import-order": {
             "hashes": [
@@ -171,11 +164,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:26ead7d1f93efc0f8c804d9fafafbe4a44b179580a7105754b245155f9af05a8",
-                "sha256:47c7b0c0f8fc10eec4cf1e71c6fdadf8decaa74ffa087e68cd1c20db7ad6a592"
+                "sha256:5534570b9980fc650d45c62877ff603c7aaaf24893371708736cc016bd221c3c",
+                "sha256:ca6ba73b7fd5f734ae70ece8c4c1f7062b07f3352f6428f6277e27c8f5c64237"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==62.1.0"
+            "version": "==62.2.0"
         },
         "tomli": {
             "hashes": [

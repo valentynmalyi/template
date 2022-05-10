@@ -1,4 +1,5 @@
 from point import Point
+
 from . import exceptions
 from .vector import Vector
 

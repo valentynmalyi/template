@@ -3,6 +3,7 @@ from math import isclose
 
 from line import exceptions as line_exception, LineSegment
 from point import Point
+
 from . import exceptions
 
 
