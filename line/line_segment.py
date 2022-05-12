@@ -10,6 +10,9 @@ class LineSegment:
         self.b = b
         self._validate_equal_points()
 
+    def __repr__(self) -> str:
+        return f"A({self.a.x},{self.b.y}), B({self.b.x},{self.b.y})"
+
     @property
     def vector(self) -> Vector:
         return Vector(self.b.x - self.a.x, self.b.y - self.a.y)
