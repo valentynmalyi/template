@@ -1,5 +1,6 @@
-import pytest
 from itertools import permutations
+
+import pytest
 
 from point import Point
 from triangle.triangle import exceptions, RightTriangle, Triangle
