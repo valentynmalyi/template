@@ -9,12 +9,12 @@ from triangle.triangle import exceptions, RightTriangle, Triangle
 class TestTriangle:
     def test_validate_is_line(self):
         with pytest.raises(exceptions.IsLine):
-            for a, b, c in permutations([Point(0, 0), Point(0, 0), Point(0, 1)], 3):
-                Triangle(a, b, c)
+            Triangle._validate_line_segment(Point(0, 0), Point(0, 0), Point(1, 0))
 
     def test_validate_is_point(self):
+        Triangle(Point(1, 1), Point(0, 0), Point(1, 0))
         with pytest.raises(exceptions.IsPoint):
-            RightTriangle(Point(0, 0), Point(0, 0), Point(0, 0))
+            Triangle(Point(0, 0), Point(0, 0), Point(0, 0))
 
 
 class TestRightTriangle:
