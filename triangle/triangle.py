@@ -9,21 +9,23 @@ from . import exceptions
 
 class Triangle:
     def __init__(self, a: Point, b: Point, c: Point):
+        self._validate(a, b, c)
         self.a = a
         self.b = b
         self.c = c
-        self._validate()
 
     def __repr__(self) -> str:
         return f"A{self.a}, B{self.b}, C{self.c}"
 
-    def _validate(self) -> None:
-        self._validate_is_point()
-        self._validate_is_line()
+    @classmethod
+    def _validate(cls, a: Point, b: Point, c: Point) -> None:
+        cls._validate_is_point(a, b, c)
+        cls._validate_is_line(a, b, c)
 
-    def _validate_is_line(self) -> None:
-        for a, b, c in permutations([self.a, self.b, self.c], 3):
-            self._validate_line_segment(a, b, c)
+    @classmethod
+    def _validate_is_line(cls, a: Point, b: Point, c: Point) -> None:
+        for a, b, c in permutations([a, b, c], 3):
+            cls._validate_line_segment(a, b, c)
 
     @staticmethod
     def _validate_line_segment(a: Point, b: Point, c: Point) -> None:
@@ -32,9 +34,10 @@ class Triangle:
         except line_exception.EqualPoints:
             raise exceptions.IsLine(LineSegment(a, c))
 
-    def _validate_is_point(self) -> None:
-        if self.a == self.b == self.c:
-            raise exceptions.IsPoint(self.a)
+    @staticmethod
+    def _validate_is_point(a: Point, b: Point, c: Point) -> None:
+        if a == b == c:
+            raise exceptions.IsPoint(a)
 
 
 class RightTriangle(Triangle):
