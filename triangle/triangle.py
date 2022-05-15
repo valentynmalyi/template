@@ -20,10 +20,16 @@ class Triangle:
     @classmethod
     def _validate(cls, a: Point, b: Point, c: Point) -> None:
         cls._validate_is_point(a, b, c)
-        cls._validate_is_line(a, b, c)
+        cls._validate_is_two_dot_line(a, b, c)
+        cls._validate_is_three_dot_line(a, b, c)
 
     @classmethod
-    def _validate_is_line(cls, a: Point, b: Point, c: Point) -> None:
+    def _validate_is_three_dot_line(cls, a: Point, b: Point, c: Point) -> None:
+        if a.x == b.x == c.x or a.y == b.y == c.y:
+            raise exceptions.IsLine(LineSegment(a, c))
+
+    @classmethod
+    def _validate_is_two_dot_line(cls, a: Point, b: Point, c: Point) -> None:
         for a, b, c in permutations([a, b, c], 3):
             cls._validate_line_segment(a, b, c)
 
