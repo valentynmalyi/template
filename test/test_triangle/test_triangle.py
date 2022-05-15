@@ -17,8 +17,7 @@ class TestTriangle:
         Triangle._validate_is_two_dot_line(Point(1, 1), Point(0, 0), Point(1, 0))
         assert len(test_mock.mock_calls) == 6
         """  # can I do two related assert for one test function??? If I want to check specific call input
-        calls = [
-            call(Point(1, 1), Point(0, 0), Point(1, 0)), 
+            calls = [ call(Point(1, 1), Point(0, 0), Point(1, 0)), #noqa W291
             call(Point(1, 1), Point(1, 0), Point(0, 0)),
             call(Point(0, 0), Point(1, 1), Point(1, 0)),
             call(Point(0, 0), Point(1, 0), Point(1, 1)),
@@ -34,13 +33,14 @@ class TestTriangle:
             Triangle._validate_line_segment(Point(0, 0), Point(0, 0), Point(1, 0))
 
     def test_validate_is_point(self):
-        Triangle(Point(1, 1), Point(0, 0), Point(1, 0))
+        Triangle._validate_is_point(Point(1, 1), Point(0, 0), Point(1, 0))
         with pytest.raises(exceptions.IsPoint):
             Triangle._validate_is_point(Point(0, 0), Point(0, 0), Point(0, 0))
 
 
 class TestRightTriangle:
     def test_validate_is_right(self):
-        assert isinstance(RightTriangle(Point(0, 0), Point(1, 0), Point(0, 2)), Triangle)
+        RightTriangle._validate_is_right(Point(0, 0), Point(1, 0), Point(0, 2))
+        # assert isinstance(RightTriangle(Point(0, 0), Point(1, 0), Point(0, 2)), Triangle)
         with pytest.raises(exceptions.IsNotRight):
             RightTriangle._validate_is_right(Point(3, 3), Point(1, 0), Point(0, 2))
