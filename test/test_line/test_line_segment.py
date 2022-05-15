@@ -3,7 +3,7 @@ from math import isclose
 import pytest
 
 from line import Vector
-from line.line_segment import LineSegment, exceptions
+from line.line_segment import exceptions, LineSegment
 from point import Point
 
 
