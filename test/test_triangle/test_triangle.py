@@ -33,11 +33,11 @@ class TestTriangle:
     def test_validate_is_point(self):
         Triangle(Point(1, 1), Point(0, 0), Point(1, 0))
         with pytest.raises(exceptions.IsPoint):
-            Triangle(Point(0, 0), Point(0, 0), Point(0, 0))
+            Triangle._validate_is_point(Point(0, 0), Point(0, 0), Point(0, 0))
 
 
 class TestRightTriangle:
     def test_validate_is_right(self):
         assert isinstance(RightTriangle(Point(0, 0), Point(1, 0), Point(0, 2)), Triangle)
         with pytest.raises(exceptions.IsNotRight):
-            RightTriangle(Point(3, 3), Point(1, 0), Point(0, 2))
+            RightTriangle._validate_is_right(Point(3, 3), Point(1, 0), Point(0, 2))
