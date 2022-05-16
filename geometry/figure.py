@@ -1,5 +1,7 @@
+from typing import Type
+
 from .validation import FigureValidation
 
 
 class Figure:
-    validation: FigureValidation
+    validation: Type[FigureValidation]
