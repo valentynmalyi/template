@@ -54,6 +54,7 @@ class RightTriangle(Triangle):
     @classmethod
     def _validate_is_right(cls, a: Point, b: Point, c: Point) -> None:
         side_a, side_b, side_c = sorted([
-            LineSegment(a, b).square_length, LineSegment(b, c).square_length, LineSegment(a, c).square_length])
+            LineSegment(a, b).square_length, LineSegment(b, c).square_length, LineSegment(a, c).square_length
+        ])
         if not isclose(side_c, side_a + side_b):
             raise exceptions.IsNotRight(f'{cls}')
