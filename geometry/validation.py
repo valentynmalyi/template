@@ -5,4 +5,4 @@ class FigureValidation(ABC):
 
     @abstractmethod
     def validate(self, *args, **kwargs):
-        raise NotImplemented()
+        raise NotImplementedError()
