@@ -1,4 +1,11 @@
-class Point:
+from geometry import Figure
+
+from .validations import PointValidation
+
+
+class Point(Figure):
+    validation = PointValidation
+
     def __init__(self, x: int, y: int):
         self.x = x
         self.y = y

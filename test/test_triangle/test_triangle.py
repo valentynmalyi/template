@@ -12,7 +12,7 @@ class TestTriangle:
         with pytest.raises(exceptions.IsLine):
             Triangle._validate_is_three_dot_line(Point(0, 0), Point(0, 1), Point(0, 2))
 
-    @patch("triangle.Triangle._validate_line_segment")
+    @patch.object(Triangle, "_validate_line_segment")
     def test_validate_is_two_dot_line(self, test_mock):
         Triangle._validate_is_two_dot_line(Point(1, 1), Point(0, 0), Point(1, 0))
         assert len(test_mock.mock_calls) == 6
