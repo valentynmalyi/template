@@ -24,9 +24,9 @@ class Triangle:
 
     @classmethod
     def _validate_is_line(cls, a: Point, b: Point, c: Point) -> None:
-        for a, b, c in permutations([a, b, c], 3):
-            cls._validate_line_segment(a, b, c)
-            cls._validate_triangle_inequality(a, b, c)
+        for a1, b1, c1 in permutations([a, b, c], 3):
+            cls._validate_line_segment(a1, b1, c1)
+            cls._validate_triangle_inequality(a1, b1, c1)
 
     @staticmethod
     def _validate_line_segment(a: Point, b: Point, c: Point) -> None:
@@ -54,7 +54,7 @@ class RightTriangle(Triangle):
     @classmethod
     def _validate_is_right(cls, a: Point, b: Point, c: Point) -> None:
         side_a, side_b, side_c = sorted([
-            LineSegment(a, b).square_length, LineSegment(b, c).square_length, LineSegment(a, c).square_length
+            LineSegment(a, b).square_length, LineSegment(b, c).square_length, LineSegment(a, c).square_length,
         ])
         if not isclose(side_c, side_a + side_b):
             raise exceptions.IsNotRight(f'{cls}')
