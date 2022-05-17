@@ -6,6 +6,7 @@ from . import exceptions
 
 class LineSegmentValidation(FigureValidation):
     def __init__(self, a: Point, b: Point):
+        super().__init__(a, b)
         self.a = a
         self.b = b
 

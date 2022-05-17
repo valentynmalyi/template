@@ -7,7 +7,7 @@ class Point(Figure):
     validation_class = PointValidation
 
     def __init__(self, x: int, y: int):
-        super().__init__(x, y)
+        super().__init__()
         self.x = x
         self.y = y
 
