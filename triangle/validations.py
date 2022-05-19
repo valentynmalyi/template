@@ -50,7 +50,7 @@ class RightTriangleValidation(TriangleValidation):
         side_a, side_b, side_c = sorted([
             LineSegment(self.a, self.b).square_length,
             LineSegment(self.b, self.c).square_length,
-            LineSegment(self.a, self.c).square_length
+            LineSegment(self.a, self.c).square_length,
         ])
         if not isclose(side_c, side_a + side_b):
             raise exceptions.IsNotRight(f'{self}')
