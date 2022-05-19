@@ -19,9 +19,3 @@ class Triangle(Figure):
 
 class RightTriangle(Triangle):
     validation_class = validations.RightTriangleValidation
-
-    def __init__(self, a: Point, b: Point, c: Point):
-        super().__init__(a, b, c)
-
-    def __repr__(self) -> str:
-        return f"Right A{self.a}, B{self.b}, C{self.c}"
