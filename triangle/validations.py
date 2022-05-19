@@ -1,5 +1,4 @@
 from itertools import permutations
-
 from math import isclose
 
 from geometry import FigureValidation
