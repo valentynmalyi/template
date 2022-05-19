@@ -1,10 +1,12 @@
-from math import isclose
-
 from itertools import permutations
 
+
+from math import isclose
+
 from geometry import FigureValidation
-from point import Point
 from line import exceptions as line_exception, LineSegment
+from point import Point
+
 
 from . import exceptions
 
