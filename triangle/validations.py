@@ -42,15 +42,8 @@ class TriangleValidation(FigureValidation):
 
 
 class RightTriangleValidation(TriangleValidation):
-    def __init__(self, a: Point, b: Point, c: Point):
-        super().__init__(a, b, c)
-        self.a = a
-        self.b = b
-        self.c = c
-
     def validate(self) -> None:
-        self._validate_is_point()
-        self._validate_is_line()
+        super().validate()
         self._validate_is_right()
 
     def _validate_is_right(self) -> None:
