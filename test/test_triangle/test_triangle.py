@@ -4,7 +4,7 @@ import pytest
 
 from point import Point
 from triangle import exceptions
-from triangle.triangle import RightTriangle, Triangle
+from triangle.triangle import EquilateralTriangle, RightTriangle, Triangle
 from triangle.validations import TriangleValidation
 
 
@@ -47,3 +47,10 @@ class TestRightTriangle:
         RightTriangle(Point(0, 0), Point(1, 0), Point(0, 2))
         with pytest.raises(exceptions.IsNotRight):
             RightTriangle(Point(3, 3), Point(1, 0), Point(0, 2))
+
+
+class TestEquilateralTriangle:
+    def test_validate_is_equilateral(self):
+        EquilateralTriangle(Point(0, 4), Point(0, -4), Point(6.9, 0))
+        with pytest.raises(exceptions.IsNotEquilateral):
+            EquilateralTriangle(Point(0, 0), Point(1, 0), Point(0, 2))
