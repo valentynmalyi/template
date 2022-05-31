@@ -1,3 +1,5 @@
+from math import isclose
+
 from geometry import Figure
 
 from .validations import PointValidation
@@ -6,7 +8,7 @@ from .validations import PointValidation
 class Point(Figure):
     validation_class = PointValidation
 
-    def __init__(self, x: int, y: int):
+    def __init__(self, x: float, y: float):
         super().__init__()
         self.x = x
         self.y = y
@@ -17,4 +19,4 @@ class Point(Figure):
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Point):
             return False
-        return self.x == other.x and self.y == other.y
+        return isclose(self.x, other.x) and isclose(self.y, other.y)

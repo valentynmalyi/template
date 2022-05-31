@@ -9,7 +9,7 @@ from point import Point
 
 class TestLineSegment:
     def test_vector(self):
-        assert LineSegment(Point(1, 1), Point(2, 1)).vector == Vector(1, 0)
+        assert LineSegment(Point(1, 1), Point(2.1, 1)).vector == Vector(1.1, 0)
 
     def test_square_length(self):
         assert LineSegment(Point(1, 1), Point(2, 2)).square_length == 2
@@ -20,4 +20,4 @@ class TestLineSegment:
     def test_validate_equal_points(self):
         LineSegment(Point(0, 0), Point(1, 1))
         with pytest.raises(exceptions.EqualPoints):
-            LineSegment(Point(0, 0), Point(0, 0))
+            LineSegment(Point(0.1, 0), Point(0.1, 0))

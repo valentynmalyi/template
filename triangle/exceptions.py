@@ -25,3 +25,11 @@ class IsNotRight(TriangleException):
 
     def __str__(self) -> str:
         return f"{self.triangle_points} is not a right triangle"
+
+
+class IsNotEquilateral(TriangleException):
+    def __init__(self, triangle_points: str):
+        self.triangle_points = triangle_points
+
+    def __str__(self) -> str:
+        return f"{self.triangle_points} is not equilateral"

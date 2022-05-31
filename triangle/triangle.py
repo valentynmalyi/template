@@ -19,3 +19,7 @@ class Triangle(Figure):
 
 class RightTriangle(Triangle):
     validation_class = validations.RightTriangleValidation
+
+
+class EquilateralTriangle(Triangle):
+    validation_class = validations.EquilateralTriangleValidation

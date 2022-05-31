@@ -21,7 +21,7 @@ class LineSegment(Figure):
         return Vector(self.b.x - self.a.x, self.b.y - self.a.y)
 
     @property
-    def square_length(self) -> int:
+    def square_length(self) -> float:
         return self.vector.square_length
 
     @property
