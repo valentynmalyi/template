@@ -62,6 +62,8 @@ class EquilateralTriangleValidation(TriangleValidation):
         self._validate_is_equilateral()
 
     def _validate_is_equilateral(self) -> None:
-        if not isclose(LineSegment(self.a, self.b).length, LineSegment(self.b, self.c).length) and \
-               not isclose(LineSegment(self.a, self.c).length, LineSegment(self.b, self.c).length):
+        c = LineSegment(self.a, self.b).square_length
+        b = LineSegment(self.a, self.c).square_length
+        a = LineSegment(self.b, self.c).square_length
+        if not isclose(a, b) and not isclose(a, c):
             raise exceptions.IsNotEquilateral(f'{self}')
